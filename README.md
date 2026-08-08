@@ -1,9 +1,10 @@
-# Web Security Header Checker - Day 1
+# Web Security Header Checker
 
-A lightweight Python CLI tool to fetch HTTP response headers from a target domain and audit them against standard security headers.
+A lightweight Python CLI tool to audit HTTP security headers, analyze server disclosure risks, and calculate security scores for target domains.
 
 ## Features
-- **HTTP/HTTPS Fetcher:** Automatically handles scheme formatting and redirects.
+
+- **HTTP/HTTPS Fetcher:** Automatically handles URL formatting and redirects.
 - **Security Header Audit:** Checks for the presence of 6 essential headers:
   - `Strict-Transport-Security` (HSTS)
   - `Content-Security-Policy` (CSP)
@@ -11,9 +12,11 @@ A lightweight Python CLI tool to fetch HTTP response headers from a target domai
   - `X-Content-Type-Options`
   - `Referrer-Policy`
   - `Permissions-Policy`
-- **Console Summary:** Displays present/missing header status alongside status codes and descriptions.
+- **Value Analysis & Scoring:** Assigns a security score out of 100 based on weighted security header presence and calculates a letter grade (A+, A, B, C, D, F).
+- **Information Disclosure Detection:** Flags exposed technology headers (`Server`, `X-Powered-By`, `X-AspNet-Version`, `X-Runtime`) and applies penalties.
 
 ## Prerequisites
+
 - Python 3.x
 - `requests` library
 
