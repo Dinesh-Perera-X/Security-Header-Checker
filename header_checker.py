@@ -7,6 +7,12 @@ import sys
 import urllib3
 from datetime import datetime
 
+import os
+
+# Strip SOCKS and HTTP proxy variables directly in Python
+for var in ["socks_proxy", "SOCKS_PROXY", "all_proxy", "ALL_PROXY", "http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY"]:
+    os.environ.pop(var, None)
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 SECURITY_HEADERS = {
