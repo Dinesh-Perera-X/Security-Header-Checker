@@ -1,20 +1,20 @@
 # Web Security Header Checker
 
-A lightweight Python CLI tool to audit HTTP security headers, analyze server disclosure risks, run concurrent multi-target batch scans, and export structured reports (CSV, JSON, HTML).
+A lightweight, multi-threaded Python CLI tool to audit HTTP security headers, detect server technology disclosure risks, run batch scans, and generate structured reports (CSV, JSON, HTML).
 
 ## Features
 
-- **HTTP/HTTPS Fetcher:** Automatically handles scheme formatting, custom User-Agents, and redirects.
+- **HTTP/HTTPS Fetcher:** Handles scheme formatting, custom User-Agents, and redirects.
 - **Security Header Audit:** Checks for 6 essential security headers (`HSTS`, `CSP`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`).
 - **Value Analysis & Scoring:** Assigns security scores (0–100) and letter grades (A+ to F).
 - **Information Disclosure Detection:** Flags server technology disclosure headers (`Server`, `X-Powered-By`, etc.) with penalties.
 - **Batch Processing & Multithreading:** Concurrently audits multiple target domains from a text file using thread pools.
-- **Multi-Format Reporting:** Exports comprehensive audit results directly to `.json`, `.csv`, or styled `.html` web reports.
+- **Multi-Format Reporting:** Exports audit results directly to `.json`, `.csv`, or styled `.html` web reports.
+- **Unit Tested & Packaged:** Includes automated test suites and pip-installable setup configuration.
 
-## Prerequisites
+## Installation
 
-- Python 3.x
-- `requests` library
+Install locally in editable mode:
 
 ```bash
-pip install requests
+pip install -e . --break-system-packages
