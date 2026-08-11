@@ -1,0 +1,12 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# Generated scan reports
+report.json
+report.csv
+report.html
